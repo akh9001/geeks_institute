@@ -3,13 +3,9 @@
 CREATE USER root WITH PASSWORD 'root';
 
 -- 🗃️ 2. Create Databases & Grant Privileges
-CREATE DATABASE clientdb;
-CREATE DATABASE productdb;
-CREATE DATABASE orderdb;
+CREATE DATABASE public;
 
-GRANT ALL PRIVILEGES ON DATABASE clientdb TO root;
-GRANT ALL PRIVILEGES ON DATABASE productdb TO root;
-GRANT ALL PRIVILEGES ON DATABASE orderdb TO root;
+GRANT ALL PRIVILEGES ON DATABASE public TO root;
 
 -- 📦 3. Create `items` Table and Insert Data
 CREATE TABLE items (
