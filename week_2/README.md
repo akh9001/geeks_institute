@@ -77,3 +77,5 @@ psql -U username dbname < backup.sql
 createdb -U postgres mydb
 ✅ Grant Access to a User
 GRANT ALL PRIVILEGES ON DATABASE mydb TO asmaa;
+
+An aggregate function is a special kind of function that operates on several rows of a query at once, returning a single result.
