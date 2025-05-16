@@ -1,27 +1,27 @@
--- 🎬 Create the Hollywood database
-CREATE DATABASE Hollywood;
+SELECT COUNT(*) 
+FROM FirstTab AS ft 
+WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NULL )
 
--- 🔁 Connect to the Hollywood database
-\c Hollywood
+-- Output: 0
+-- Explanation: The subquery returns NULL, and comparing anything with NULL makes the whole condition UNKNOWN (not true), so no rows match.
 
--- 👑 Grant privileges to user 'root' (assuming 'root' exists and has access)
-GRANT ALL PRIVILEGES ON DATABASE Hollywood TO root;
+SELECT COUNT(*) 
+FROM FirstTab AS ft 
+WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id = 5 )
 
--- 🎭 Create the actors table
-CREATE TABLE actors (
-    actor_id SERIAL PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(100) NOT NULL,
-    age DATE NOT NULL,
-    number_oscars SMALLINT
-);
+-- Output: 2
+-- Explanation: Subquery returns (5), so this filters out only rows with id = 5. Rows with id = 6 and 7 match.
 
--- 📊 Count actors (initially 0)
-SELECT COUNT(*) FROM actors;
+SELECT COUNT(*) 
+FROM FirstTab AS ft 
+WHERE ft.id NOT IN ( SELECT id FROM SecondTab )
 
--- 🎬 Insert actors data
-INSERT INTO actors (first_name, last_name, age, number_oscars)
-VALUES
-    ('Matt', 'Damon', '1970-10-08', 5),
-    ('George', 'Clooney', '1961-05-06', 2),
-    (NULL, NULL, '1999-05-06', NULL);  -- This will fail due to NOT NULL constraints
+-- Output: 0
+-- Explanation: The subquery returns (5, NULL), and presence of NULL makes the whole `NOT IN` condition UNKNOWN for every row.
+
+SELECT COUNT(*) 
+FROM FirstTab AS ft 
+WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NOT NULL )
+
+-- Output: 2
+-- Explanation: Subquery returns (5), so it filters out only id = 5. Rows with id = 6 and 7 match. NULL is ignored in comparison.
