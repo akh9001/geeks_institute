@@ -1,0 +1,31 @@
+{
+	"sqltools.connections": [
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 5432,
+			"driver": "PostgreSQL",
+			"name": "chaimaa",
+			"database": "public",
+			"username": "root"
+		},
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 5433,
+			"driver": "PostgreSQL",
+			"name": "test",
+			"database": "dvdrental",
+			"username": "elona"
+		},
+		{
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 5433,
+			"driver": "PostgreSQL",
+			"name": "localhost",
+			"database": "dvdrental",
+			"username": "postgres"
+		}
+	]
+}
