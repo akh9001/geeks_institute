@@ -1,24 +1,25 @@
-let sentence = "The movie is not that bad, I like it";
-let wordNot = sentence.indexOf("not");
-let wordBad = sentence.indexOf("bad");
 
-if (wordNot < wordBad && wordNot !== -1 && wordBad !== -1)
-	console.log(sentence.slice(0, wordNot) + "good" + sentence.slice(wordBad + 3));
-else
-	console.log(sentence);
-// Output: The movie is good, I like it
+console.log("Method 1 : using nested loop \n");
+// Method 1 : using nested loop
+let n = 6;
+for (let i = 0; i < n; i++) {
+	let j = 0;
+	while (j < i + 1) {
+		process.stdout.write("* ");
+		j++;
+	}
+	process.stdout.write("\n");
+}
 
-// let removeNegative = (str) => {
-// 	let wordNot = str.indexOf("not");
-// 	let wordBad = str.indexOf("bad");
+console.log("\nMethod 2 : using one loop \n");
+// Method 2 : using one loop
+let star = '* ';
+let triangle = '';
+for (let i = 1; i <= n; i++)
+	triangle += star.repeat(i) + '\n';
+console.log(triangle);
 
-// 	if (wordNot < wordBad && wordNot !== -1 && wordBad !== -1)
-// 		return str.slice(0, wordNot) + "good" + str.slice(wordBad + 3);
-// 	else
-// 		return str;
-// }
+console.log("\nMethod 3 : using C optimization \n");
+// Method 3 : using one loop
 
-// console.log(removeNegative("The movie is not that bad, I like it"));
-// console.log(removeNegative("This movie is not so bad !"));
-// console.log(removeNegative("This dinner is bad !"));
-// console.log(removeNegative("This session is not good !"));
+for (let i = 1; i <= n; i++) console.log(star.repeat(i));
