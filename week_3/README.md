@@ -60,3 +60,34 @@
 | str       | ✅       | ❌      | `replace(a,b)`| Return a copy with `a` replaced by `b`        | `"abc".replace('a','z')` → `"zbc"` |
 | str       | ✅       | ❌      | `split(sep)`  | Split into list by `sep`                      | `"a,b".split(',')`               |
 | str       | ✅       | ❌      | `find(s)`     | Return lowest index of `s`, or `-1` if missing| `"abc".find('b')` → `1`          |
+
+`
+	// exercise 5 : Family
+	const family = {
+		father: "Baba",
+		mother: "Mama",
+		sister: "Nouna",
+		brother: "Nano",
+	};
+
+	for (const member in family) {
+		console.log(`The ${member} is : ${family[member]}`);
+	}
+	// exercise 6 : Rudolf
+	const details = {
+		my: 'name',
+		is: 'Rudolf',
+		the: 'reindeer'
+	}
+
+	let str = "";
+	for (const [key, val] of Object.entries(details)) {
+		str += `${key} ${val} `;
+	}
+	console.log(str)
+	// redo it usung for in
+	str = "";
+	for (const key in details) {
+		str += `${key} ${details[key]} `;
+	}
+`
