@@ -1,0 +1,64 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome User</title>
+	<style>
+		nav {
+		background-color: #333;
+		color: white;
+		padding: 10px 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		}
+
+		.logo {
+		font-weight: bold;
+		}
+
+		.user-info {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		}
+
+		.user-info img {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav>
+		<div class="logo">MyWebsite</div>
+		<div id="user-container"></div>
+	</nav>
+
+	<script>
+		// Self-invoking function
+		(function (name) {
+			const container = document.getElementById("user-container");
+
+			const userDiv = document.createElement("div");
+			userDiv.className = "user-info";
+
+			const img = document.createElement("img");
+			img.src = "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+
+			const span = document.createElement("span");
+			span.textContent = name;
+
+			userDiv.appendChild(img);
+			userDiv.appendChild(span);
+			container.appendChild(userDiv);
+		})("John");
+	</script>
+</body>
+
+</html>
