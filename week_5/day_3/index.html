@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Week 4 - Day 3</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<body>
+		<div class="container">
+			<div class="header">
+				<img src="imgs/startwars.png" alt="logo" class="logo">
+			</div>
+			<div class="character-info">
+				<!-- this will show our spinner -->
+				<div id="loading">
+					<i class="fas fa-spinner"></i> Loading...
+				</div>
+				<div id="character">
+					<!-- Character info will appear here -->
+				</div>
+				<!-- <h1>Luke Skywalker</h1>
+				<div class="character-details">
+					<p><strong>Height:</strong> 172 cm</p>
+					<p><strong>Gender:</strong> Male</p>
+					<p><strong>Birth Year:</strong> 19BBY</p>
+					<p><strong>Home World:</strong> Tatooine</p>
+				</div> -->
+			</div>
+			<div class="search-box">
+				<button id="getCharacterBtn" onclick="fetchData()">Find Someone</button>
+			</div>
+		</div>
+	</body>
+	<script src="challenge.js" defer></script>		
+</html>
