@@ -35,7 +35,7 @@ def setup_database():
         print(f"❌ Database setup error: {e}")
 
 def get_random_countries():
-    url = 'https://restcountries.com/v3.1/all'
+    url = 'https://restcountries.com/v3.1/all?fields=name,capital,flag,subregion,population'
 
     try:
         response = requests.get(url)
