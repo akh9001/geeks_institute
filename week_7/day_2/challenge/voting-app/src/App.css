@@ -1,0 +1,32 @@
+.language{
+	display: flex;
+	width: 400px;
+	 /* height: 100px; */
+	justify-content: space-between;
+	align-items: baseline;
+	background-color: #FFEBCD;
+	padding: 10px 40px;
+	border: 1px solid #4847479c;
+}
+.language button {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.container {
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 12px;
+}
